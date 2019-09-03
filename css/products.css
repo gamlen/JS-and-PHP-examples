@@ -1,0 +1,15 @@
+input[name=size] {
+    display: none;
+}
+input[name=HxDimensions] {
+    display: none;
+}
+input[name=WxDimensions] {
+    display: none;
+}
+input[name=LxDimensions] {
+    display: none;
+}
+input[name=weight] {
+    display: none;
+}
