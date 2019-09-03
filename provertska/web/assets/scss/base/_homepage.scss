@@ -1,0 +1,711 @@
+.header-content.slider {
+    .slick-slider-image {
+        width: 100%;
+
+        &.toggled-nav {
+            filter: brightness(30%);
+            -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+            -moz-animation: fadein 2s; /* Firefox < 16 */
+            -ms-animation: fadein 2s; /* Internet Explorer */
+            -o-animation: fadein 2s; /* Opera < 12.1 */
+            animation: fadein 2s;
+        }
+
+        @include mobile-to-tablet {
+            height: 70vw;
+            min-height: 250px
+        }
+
+        @include tablet-to-desktop {
+            height: 40vw;
+        }
+
+        @include desktop {
+            max-height: 501px;
+        }
+    }
+
+    .slick-dots {
+        position: absolute;
+        display: block;
+        padding: 0;
+        list-style: none;
+        text-align: center;
+
+        @include mobile {
+            width: 95%;
+        }
+
+        @include tablet {
+            width: 100%;
+        }
+
+        li.slick-active {
+            &:before {
+                opacity: 1;
+                background-color: $brand-color2;
+            }
+        }
+
+        li {
+            position: relative;
+            display: inline-block;
+            width: 1%;
+            margin: 0 36px -16px 16px;
+            cursor: pointer;
+
+            button {
+                display: none;
+            }
+
+            &::before {
+                content: '';
+                min-height: 5px;
+                position: absolute;
+                font-size: 35px;
+                text-align: center;
+                background-color: $main-slider-dots;
+
+                @include mobile {
+                    min-width: 40px;
+                }
+
+                @include tablet {
+                    min-width: 55px;
+                }
+            }
+        }
+    }
+
+    //Can not add one image for two arrows, box shadow incorrect
+    .slick-prev {
+        left: 0;
+        background-image: url(../../images/double-back-arrow.png);
+        background-repeat: no-repeat;
+        z-index: 10;
+        -webkit-border-top-right-radius: 4px;
+        -moz-border-radius-topright: 4px;
+        border-top-right-radius: 4px;
+        -webkit-border-bottom-right-radius: 4px;
+        -moz-border-radius-bottomright: 4px;
+        border-bottom-right-radius: 4px;
+    }
+
+    .slick-next {
+        right: 0;
+        background-image: url(../../images/double-next-arrow.png);
+        background-repeat: no-repeat;
+        -webkit-border-top-left-radius: 4px;
+        -moz-border-radius-topleft: 4px;
+        border-top-left-radius: 4px;
+        -webkit-border-bottom-left-radius: 4px;
+        -moz-border-radius-bottomleft: 4px;
+        border-bottom-left-radius: 4px;
+    }
+
+    .slick-next,
+    .slick-prev {
+        background-color: $brand-color2;
+        -webkit-box-shadow: 0 4px 0 0 $brand-color2-shadow;
+        -moz-box-shadow: 0 4px 0 0 $brand-color2-shadow;
+        box-shadow: 0 4px 0 0 $brand-color2-shadow;
+        background-position: center;
+        min-width: 50px;
+        min-height: 60px;
+
+        &:before {
+            content: " ";
+            opacity: 1;
+        }
+    }
+}
+
+.services-content {
+    background-color: $services-background;
+}
+
+
+.our-services {
+    .skills-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 270px);
+        padding-top: 50px;
+
+        @include mobile {
+            justify-content: center;
+        }
+
+        @include tablet {
+            justify-content: space-between;
+        }
+
+        .skill-item {
+            text-align: center;
+            padding: 49px 15px;
+            max-width: 270px;
+            min-height: 310px;
+            cursor: pointer;
+            position: relative;
+            box-sizing: border-box;
+            background-color: $skill-item-background;
+            -webkit-box-shadow: 0 3px 0 0 $skill-item-shadow;
+            -moz-box-shadow: 0 3px 0 0 $skill-item-shadow;
+            box-shadow: 0 3px 0 0 $skill-item-shadow;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            margin-bottom: 40px;
+
+            &:hover {
+                background-color: $color-white;
+            }
+
+            p {
+                font-size: 12px;
+                margin-top: 24px;
+                line-height: 21px;
+
+            }
+
+            h2 {
+                margin-top: 6px;
+                font-size: 16px;
+                font-weight: 800;
+                text-transform: uppercase;
+            }
+
+            .skill-button {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: -23px;
+
+                .read-more {
+                    display: unset;
+                    font-size: 14px;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}
+
+.view-more-services {
+    display: flex;
+    min-height: 100px;
+    background-color: $background-homepage;
+    margin-top: 45px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: 17px 37px 0 25px;
+    box-sizing: border-box;
+    font-size: 10px;
+
+    @include tablet {
+        justify-content: space-between;
+    }
+
+    @include mobile {
+        padding: 17px 37px 17px 25px;
+        flex-direction: column;
+        text-align: center;
+    }
+    h1 {
+        font-size: 29px;
+
+    }
+
+    p {
+        margin-top: 4px;
+        font-size: 12px;
+    }
+}
+
+.why-modus-container {
+    background-color: $why-modus-background;
+
+    h3 {
+        font-size: 16px;
+        font-weight: 800;
+    }
+
+    .why-modus-versus {
+        position: relative;
+        background-image: url(../../images/background-path.png);
+        background-repeat: repeat-x;
+
+        .windows-container {
+            max-height: 342px;
+            padding-top: 56px;
+        }
+
+        h1 {
+            color: $brand-color2;
+            text-transform: uppercase;
+            font-size: 40px;
+            font-weight: 600;
+            line-height: 53px;
+        }
+
+        .advantages-container {
+            background-color: $services-background;
+            min-height: 472px;
+
+            @include mobile {
+                padding-top: 88px;
+            }
+
+            @include tablet {
+                padding-top: 211px;
+            }
+        }
+
+        .happy-clients-container {
+            min-height: 212px;
+            position: relative;
+
+            @include mobile-to-desktop {
+                margin-top: 30px;
+            }
+
+            /* the slides */
+            .slick-slide {
+                @include desktop {
+                    margin: 0 13px;
+                }
+
+                @include tablet-to-desktop {
+                    margin: 0 50px;
+                }
+            }
+            /* the parent */
+            .slick-list {
+                @include desktop {
+                    margin: 0 -13px;
+                }
+
+                @include tablet-to-desktop {
+                    margin: 0 -50px;
+                }
+            }
+
+            .slick-arrow {
+                width: 18px;
+                height: 18px;
+                background-color: $headers-color;
+                top: 4px;
+                -webkit-border-radius: 6px;
+                -moz-border-radius: 6px;
+                border-radius: 6px;
+                background-position: center;
+
+                &:before {
+                    content: " ";
+                    opacity: 1;
+                }
+
+                &:hover {
+                    background-color: $brand-color2;
+                }
+            }
+
+            .slick-prev {
+                right: 30px;
+                background-image: url(../../images/nav-arrow.png);
+                background-repeat: no-repeat;
+                transform: rotate(90deg);
+            }
+
+            .slick-slider {
+                position: unset;
+            }
+
+            .slick-next {
+                right: 2px;
+                background-image: url(../../images/nav-arrow.png);
+                background-repeat: no-repeat;
+                transform: rotate(-90deg);
+            }
+        }
+
+        #why-modus-header-text {
+            font-size: 13px;
+            color: $headers-color;
+            display: flex;
+            justify-content: center;
+        }
+
+        .window-header {
+            display: flex;
+            justify-content: space-between;
+            max-height: 37px;
+        }
+
+        .windows-wrapper {
+            min-height: 481px;
+            padding-top: 72px;
+            box-sizing: border-box;
+            position: relative;
+
+            .window {
+                background-color: $why-modus-window;
+                -webkit-border-radius: 6px;
+                -moz-border-radius: 6px;
+                border-radius: 6px;
+                position: absolute;
+                overflow: hidden;
+                -webkit-box-shadow: 0 0 0 5px rgba(193,199,200,1);
+                -moz-box-shadow: 0 0 0 5px rgba(193,199,200,1);
+                box-shadow: 0 0 0 5px rgba(193,199,200,1);
+
+                .circles {
+                    display: flex;
+                    flex-direction: row;
+                    padding-left: 32px;
+                    font-size: 28px;
+                    line-height: 29px;
+
+                    .circle {
+                        color: $window-circles;
+                        margin-right: 20px;
+
+                        &::before {
+                            font-size: 50px;
+                        }
+                    }
+                }
+
+                .image-container {
+                    max-width: 100%;
+                    height: auto;
+
+                    img {
+                        -webkit-border-radius: 6px;
+                        -moz-border-radius: 6px;
+                        border-radius: 6px;
+                    }
+                }
+
+                .minimize {
+                    &:before {
+                        content: url(../../images/minimize.png);
+                    }
+                }
+            }
+
+            .side-window {         
+                @include mobile {
+                    max-height: 126px;
+                    max-width: 166px;
+                    top: 91px;
+                }
+
+                @include tablet {
+                    max-height: 249px;
+                    max-width: 370px;
+                    top: 132px;
+                }
+
+                .image-container {
+                    img {
+                        max-height: 218px;
+                        max-width: 385px;
+
+                        @include mobile {
+                            max-height: 91px;
+                        }
+                    }
+                }
+
+                .minimize {
+                    padding: 2px 10px 11px 0;
+                }
+            }
+
+            .side-window:first-child {
+                left: 3px
+            }
+
+            .side-window:last-child {
+                right: 7px;
+            }
+
+            #main-window {
+                z-index: 10;
+
+                @include mobile {
+                    min-height: 145px;
+                    min-width: 189px;
+                }
+
+                @include tablet {
+                    min-height: 349px;
+                    min-width: 561px;
+                }
+
+                .minimize {
+                    padding: 2px 7px 14px 0;
+                }
+
+                .image-container {
+                    img {
+                        position: absolute;
+
+                        @include mobile {
+                            max-height: 160px;
+                            max-width: 189px;
+                        }
+
+                        @include tablet {
+                            max-height: 340px;
+                            max-width: 561px;
+                        }
+                    }
+                }
+            }
+        }
+
+        h1,
+        .windows-wrapper,
+        .happy-clients-slider {
+            display: flex;
+            justify-content: center;
+        }
+
+
+        .happy-clients-slider {
+            max-width: 1170px;
+            min-height: 18px;
+            padding: 49px 0 0;
+            overflow: hidden;
+
+            .slider-container {
+                @include mobile {
+                    margin: 0 65px;
+                }
+            }
+
+            img {
+                min-width: 170px;
+                max-height: 89px;
+            }
+        }
+
+        .happy-clients-switcher {
+            display: flex;
+            align-items: center;
+
+            img {
+                max-height: 10px;
+                padding-left: 10px;
+
+                @include mobile {
+                    padding-left: 10px;
+                    width: 29%;
+                    min-height: 14px;
+                }
+
+                @include tablet {
+                    width: 70%;
+                }
+
+                @include desktop {
+                    width: 82%;
+                }
+            }
+        }
+
+        .advantages {
+            display: flex;
+            min-height: 259px;
+
+            @include mobile-to-desktop {
+                flex-wrap: wrap;
+            }
+
+            @include desktop {
+                justify-content: space-between;
+            }
+
+            @include mobile-to-desktop {
+                justify-content: center;
+            }
+
+            .skill-rates {
+                @include mobile-to-desktop {
+                    margin-top: 30px;
+                }
+
+                .rate-wrapper {
+                    display: flex;
+                    color: $headers-color;
+
+                    @include tablet {
+                        flex-direction: row;
+                    }
+
+                    @include mobile {
+                        flex-direction: column;
+                    }
+
+                    span {
+                        font-size: 30px;
+                        position: absolute;
+                        top: 24px;
+                        right: 0;
+                        left: 0;
+                    }
+
+                    .progress {
+                        position: relative;
+                        font-weight: 800;
+                        text-transform: uppercase;
+                        text-align: center;
+
+                        @include tablet {
+                            margin-right: 22px;
+                        }
+
+                        @include mobile {
+                            display: flex;
+                            justify-content: center;
+                            flex-wrap: wrap;
+                            margin-bottom: 10px;
+                        }
+                    }
+
+                    .bar-overflow {
+                        overflow: hidden;
+                        width: 100%;
+                        max-height: 58px;
+
+                        @include mobile {
+                            display: flex;
+                            justify-content: center;
+                        }
+                    }
+
+                    .bar {
+                        width: 120px;
+                        height: 122px;
+                        border-radius: 50%;
+                        box-sizing: border-box;
+                        border: 15px solid $brand-color;
+                        border-bottom-color: $brand-color2;
+                        border-right-color: $brand-color2;
+                    }
+
+                    .bar-title {
+                        font-size: 16px;
+                        margin-top: 19px;
+                    }
+                }
+            }
+
+            .advantages-list {
+                list-style: none;
+                margin-top: 30px;
+
+                .advantage-item {
+                    font-size: 13px;
+                    min-height: 26px;
+                    font-weight: 100;
+                    position: relative;
+                    padding-left: 16px;
+                    color: gray;
+
+                    &::before {
+                        content: url(../../images/why-us-arrow.png);
+                        font-size: 17px;
+                        position: absolute;
+                        left: 0;
+                    }
+                }
+            }
+
+            .skill-rates {
+                max-width: 570px;
+
+                p {
+                    padding-left: 12px;
+                    font-size: 13px;
+                    min-height: 106px;
+                    line-height: 25px;
+                    margin-top: -5px;
+                    color: gray;
+                }
+
+                .vehicula-mattis {
+                    a {
+                        color: $brand-color;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        .clients-feedback {
+            position: relative;
+
+            @include desktop {
+                margin-left: 20px;
+            }
+
+            @include mobile-to-desktop {
+                margin-top: 30px;
+            }
+
+            h3 {
+                min-height: 44px;
+            }
+
+            .client-feedback {
+                background-color: $color-white;
+                position: relative;
+                font-style: italic;
+                font-size: 13px;
+                min-height: 100px;
+                padding: 9px 18px;
+                line-height: 24px;
+                color: $headers-color;
+                -webkit-border-radius: 4px;
+                -moz-border-radius: 4px;
+                border-radius: 4px;
+
+                @include mobile-to-desktop {
+                    display: flex;
+                    align-items: center;
+                    text-align: center;
+                }
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    left: 10px;
+                    bottom: 0;
+                    margin: 10px auto 0;
+                    width: 0;
+                    height: 0;
+                    border-top: solid 17px $color-white;
+                    border-left: solid 17px transparent;
+                    border-right: solid 40px transparent;
+                    transform: rotate(225deg);
+                }
+            }
+
+            .client-name {
+                margin-top: 7px;
+                padding-left: 62px;
+                color: $brand-color2;
+                font-weight: 600;
+            }
+        }
+
+        .why-choose-us {
+            @include desktop {
+                min-width: 307px;
+            }
+        }
+    }
+}

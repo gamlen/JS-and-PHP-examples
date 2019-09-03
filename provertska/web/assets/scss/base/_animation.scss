@@ -1,0 +1,45 @@
+//Homepage
+@keyframes rotate-one {
+    100% {
+        transform: rotate(21.6deg);
+        /**
+         * 12% => 21.6deg
+         */
+    }
+}
+
+@keyframes rotate-two {
+    0% {
+        transform: rotate(21.6deg);
+    }
+    100% {
+        transform: rotate(79.2deg);
+        /**
+         * 32% => 57.6deg
+         * 57.6 + 21.6 => 79.2deg
+         */
+    }
+}
+
+@keyframes fadein {
+    from { filter: brightness(100%); }
+    to   { filter: brightness(30%); }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { filter: brightness(100%); }
+    to   { filter: brightness(30%); }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { filter: brightness(100%); }
+    to   { filter: brightness(30%); }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { filter: brightness(100%); }
+    to   { filter: brightness(30%); }
+}

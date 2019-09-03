@@ -1,0 +1,196 @@
+footer {
+    background-color: $brand-color;
+    background-image: url(../../images/background-path-footer.png);
+    background-repeat: repeat-x;
+
+    .footer-wrapper {
+        background-color: $brand-color3;
+
+        .under-footer {
+            min-height: 51px;
+            display: flex;
+            align-items: center;
+            padding-left: 5px
+        }
+
+        .social-item:not(:last-child) {
+            margin-right: 28px;
+        }
+
+        .social-item {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    .content,
+    .under-footer {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .under-footer,
+    .social-links {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .under-footer {
+        width: 100%;
+
+        .modus-date {
+            font-size: 12px;
+        }
+    }
+
+    .modus-versus-logo {
+        display: flex;
+        align-items: baseline;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .upper-footer {
+        min-height: 263px;
+        padding-top: 37px;
+
+        @include mobile {
+            flex-direction: column;
+            padding-bottom: 37px;
+        }
+    }
+}
+
+.footer-information {
+    &.footer-modus,
+    &.footer-blog {
+        max-width: 370px;
+        width: 100%;
+
+        .blog-header {
+            display: flex;
+            flex-direction: row;
+            font-size: 20px;
+            font-weight: 800;
+            align-items: center;
+            margin: 8px 0 21px 0;
+
+            .blog-text-header {
+                text-transform: uppercase;
+                font-size: 20px;
+                margin-left: 4px;
+            }
+
+            p {
+                font-style: italic;
+                font-weight: 100;
+            }
+        }
+
+        .blog-container {
+            display: flex;
+            flex-direction: row;
+            font-size: 13px;
+            margin-top: 16px;
+            min-height: 74px;
+
+            img {
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 5px;
+
+                @include desktop {
+                    max-width: 70px;
+                    max-height: 70px;
+                }
+
+                @include mobile-to-desktop {
+                    max-width: 120px;
+                    max-height: 70px;
+                }
+            }
+
+            .blog-description {
+                padding: 0 17px;
+            }
+
+            p:first-child {
+                line-height: 17px;
+            }
+
+            .blog-date {
+                line-height: 27px;
+                color: $footer-header-color;
+            }
+        }
+    }
+
+    &.footer-modus {
+        padding-left: 2px;
+
+        .footer-modus-text {
+            padding: 19px 0;
+            font-size: 13px;
+            line-height: 23px;
+        }
+
+        .footer-contacts {
+            font-size: 13px;
+
+            .contact-details {
+                font-size: 20px;
+                margin-left: 15px;
+                font-style: italic;
+                font-weight: 400;
+            }
+
+            .phone,
+            .email {
+                padding-bottom: 3px;
+                display: flex;
+                align-items: center;
+
+                p {
+                    min-width: 46px;
+                }
+            }
+        }
+    }
+
+    &.footer-community,
+    &.footer-company {
+        max-width: 170px;
+        margin-top: 8px;
+        width: 100%;
+        font-size: 13px;
+
+        h2 {
+            color: $footer-header-color;
+        }
+
+        ul {
+            list-style: none;
+            padding: 25px 23px 0;
+
+            li {
+                display: flex;
+                margin-bottom: 6px;
+                font-size: 13px;
+                cursor: pointer;
+
+                &::before {
+                    background-image: url(../../images/nav-arrow.png);
+                    background-repeat: no-repeat;
+                    background-size: 8px 5px;
+                    content: '';
+                    display: inline-block;
+                    height: 10px;
+                    width: 12px;
+                    margin: 2px 3px 0 0;
+                    transform: rotate(-90deg);
+                }
+            }
+        }
+    }
+}
